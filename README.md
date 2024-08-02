@@ -7,11 +7,6 @@ of game engine for the terminal because i still don't have a real idea for the g
 
 There's a guide on how to use git [here](./docs/using-git.md).
 
-First things first, clone the repo:
-```bash
-git clone https://github.com/JatoMixo/terminal-game
-```
-
 There's a simple Makefile for working with the project. It's very simple
 and it has the following options:
 
