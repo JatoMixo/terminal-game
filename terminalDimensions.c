@@ -1,11 +1,10 @@
-#include <sys/ioctl.h>
-#include <unistd.h>
+#include "terminalDimensions.h"
 
-vector2 getTerminalDimensions() {
+vector2_t getTerminalDimensions(void) {
     struct winsize terminalWindow;
     ioctl(STDOUT_FILENO, TIOCGWINSZ, &terminalWindow);
 
-    vector2 size = {
+    vector2_t size = {
         .x = terminalWindow.ws_col,
         .y = terminalWindow.ws_row,
     };
