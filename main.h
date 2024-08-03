@@ -1,11 +1,10 @@
-#ifndef _MAIN_
-#define _MAIN_
-
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 #include "vector2.h"
-#include "terminalDimensions.c"
+#include "terminalDimensions.h"
+#include "gameLoop.h"
 
 // Game resolution
 #define WIDTH 500
@@ -14,4 +13,3 @@
 // Some constants
 #define PI 3.1415926536
 
-#endif

@@ -1,18 +1,15 @@
-.PHONY: build
-build:
-	gcc -o bin/main -g main.c
+SRC = main.c gameLoop.c terminalDimensions.c
+TARGET_BIN = bin/main
 
-.PHONY: debug
-debug:
-	gcc -o bin/main -g main.c
-	gdb -q bin/main
+debug_build: $(SRC)
+	gcc -o $(TARGET_BIN) -g $(SRC) 
 
-.PHONY: release
-release:
-	gcc -O3 -o bin/main main.c
+debug: debug_build $(SRC) 
+	gdb -q $(TARGET_BIN)
 
-.PHONY: run
-run:
-	gcc -o bin/main main.c
-	./bin/main
+release: $(SRC) 
+	gcc -O3 -o $(TARGET_BIN) $(SRC)
+
+run: debug_build $(SRC) 
+	$(TARGET_BIN)
 
